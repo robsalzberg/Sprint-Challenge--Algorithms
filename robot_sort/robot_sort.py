@@ -114,7 +114,11 @@ class SortingRobot:
                     self.move_left()
                     self.swap_item()
                     self.move_right()
-
+                if self.compare_item() == 0:
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+        
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
