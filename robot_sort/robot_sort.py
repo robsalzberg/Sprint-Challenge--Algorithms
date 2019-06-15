@@ -102,16 +102,26 @@ class SortingRobot:
 
         # The robot starts out with not holding an item (Line 7), starts at the beginning of the list (line 8) and has his light off (line 9)
 
-        while self.light_is_on() != True:
+        while self.light_is_on() != True: #line 91-95
             # While the light is not "on", set it to "on" to indicate that the list is sorted
-            self.set_light_on()
+            self.set_light_on()     #line 79-83
             # While the robot can move right
-            while self.can_move_right() == True:
+            while self.can_move_right() == True:        #line 12-17
                 # Pick up the item that is in front of the robot
-                self.swap_item()
+                self.swap_item()                        #line 52-60
                 # Now move right to sort the item
-                self.move_right()
-                
+                self.move_right()                       #line 26-37
+                # Compare item held to item in front and see if its greater
+                if self.compare_item() == 1:           #line 62-77
+                    # Turn the robot's light "off" because the list is not sorted
+                    self.set_light_off()
+                    #Swap item held of greater value with item in front of robot
+                    self.swap_item()
+                    # The move left to get in front of item of greater value
+                    self.move_left()                    #line 39-50
+                    # Swap the item of lesser value into the lower position
+                    self.swap_item()
+                    # Move robot right to the next list item to sort
          
 
 
