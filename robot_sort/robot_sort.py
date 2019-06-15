@@ -123,7 +123,7 @@ class SortingRobot:
                     self.swap_item()
                     # Move robot right to the next list item to sort
                     self.move_right()
-             # Compare item held to item in front and see if its equal to or less than 
+            # Compare item held to item in front and see if its equal to or less than 
                 if self.compare_item() == -1 or self.compare_item() == 0: 
                     # Move left
                     self.move_left()
@@ -131,9 +131,16 @@ class SortingRobot:
                     self.swap_item()
                     # Move robot right to the next list item to sort
                     self.move_right()
-                    
+            # Close the loop by checking if robot's light is "on", 
+            # if true than the list is fully sorted, 
+            # if false than move to beginning of array and continue sorting
+            if self.light_is_on() != True:
+                # ...return back to the beginning of the array to restart sorting;
+                while self.can_move_left():
+                    self.move_left()
+
 if __name__ == "__main__":
-    # Test our your implementation from the command line
+    # Test out your implementation from the command line
     # with `python robot_sort.py`
 
     l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1,
