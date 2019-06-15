@@ -122,9 +122,16 @@ class SortingRobot:
                     # Swap the item of lesser value into the lower position
                     self.swap_item()
                     # Move robot right to the next list item to sort
-         
-
-
+                    self.move_right()
+             # Compare item held to item in front and see if its equal to or less than 
+                if self.compare_item() == -1 or self.compare_item() == 0: 
+                    # Move left
+                    self.move_left()
+                    # Swap robot's item of equal or lesser value so that's its placed in the lower position
+                    self.swap_item()
+                    # Move robot right to the next list item to sort
+                    self.move_right()
+                    
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
