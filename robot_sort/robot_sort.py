@@ -97,7 +97,7 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        # The robot starts out with not holding an item (Line 7), starts at the beginning of the list (line 8) and has his light off (line 9)
 
 
 if __name__ == "__main__":
